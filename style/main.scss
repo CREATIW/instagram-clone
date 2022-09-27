@@ -1,0 +1,159 @@
+@import './mixins','./normalize','./variables','./fonts';
+/* GLOBAL - STYLES - START */
+.wrapper{
+    min-height: 100vh;
+    position: relative;
+    font-family: $mainFont;
+}
+.container{
+    width: 100%;
+    max-width: 946px;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+/* GLOBAL - STYLES - END */
+/*  HEADER - START */
+.header{
+    padding: 9px 0px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 1px solid $borderColor;
+    background-color: #fff;
+    z-index: 10;
+    &__row{
+        @include flex(center, space-between);
+    }
+    &__logo{
+        @include flex(center, space-between);
+}
+&__nav{
+    display: flex;
+}
+&__link{
+        width: 22px;
+        height: 22px;
+        &-img{
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;  
+        }
+}
+
+    &__link:not(:last-child){
+        margin-right: 22px;
+    }
+    &__search{
+        @include flex(center,unset);
+        border: 1px solid $borderColor;
+        border-radius: 3px;
+        padding: 5px;
+        gap: 5px;
+        &-input{
+            outline: none;
+            border: none;
+            font-weight: 300;
+            font-size: 14px;
+            line-height: 129%;
+            font-family: inherit;
+            color: $grey;
+            &::placeholder{
+                font-size: 14px;
+                line-height: 129%;
+                color: $grey;
+            }
+        }
+    }
+}
+/*  HEADER - END */
+
+/*  MAIN - START */
+.main{
+    padding-top: 82px;
+    &__row{
+        position: relative;
+    }
+    &__left{
+        width: calc($containerWidth* 64.9 / 100);
+        height: 100vh;
+        border: 1px solid $borderColor;
+    }
+    &__right{
+        width: calc($containerWidth - ($containerWidth * 64.9 / 100) - 30px);
+        position: fixed;
+        top: 82px;
+        right: calc((100vw - $containerWidth) / 2);
+        border: 1px solid blue;
+    }
+}
+.post{
+    border: 1px solid $borderColor;
+    &__header{
+        padding: 9px 16px;
+        @include flex(center,space-between);
+        &-left{
+            @include flex(center,unset);
+            gap: 16px;
+        }
+        &-img{
+            width: 32px;
+            height: 32px;
+            img{
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+            }
+        }
+    }
+    &__img{
+        position: relative;
+        width: 100%;
+        padding-bottom: 100%;
+        img{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            vertical-align: middle;
+        }
+    }
+    &__content{
+       padding: 0 15px;
+       &2{
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap
+       }
+    }
+}
+.icons{
+    @include flex(center, space-between);
+    &-left{
+        padding: 5px;
+    }
+    &-right{
+        padding: 0 10px;
+    }
+}
+.p1,.p2{
+    margin-right: 10px;
+}
+.hour{
+    margin-bottom: 5px;
+}
+.like,.p1{
+    font-weight: 600;
+    font-size: 14px;
+    line-height:  129% ;
+    text-transform: lowercase;
+    color: #262626;
+}
+.p3{
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 129% ;
+    color: $grey;
+}
+/*  MAIN - END */
